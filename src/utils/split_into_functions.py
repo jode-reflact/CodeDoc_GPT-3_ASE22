@@ -5,10 +5,8 @@ import sys
 import time
 from typing import List, TypedDict
 
-import openai
 import pandas as pd
 import tiktoken
-from dotenv import load_dotenv
 
 from src.utils.argparser import Arguments
 from src.utils.language_utils.base import LanguageUtil
@@ -16,8 +14,6 @@ from src.utils.language_utils.java import JavaUtils
 from src.utils.language_utils.javascript import JavascriptUtils
 from src.utils.language_utils.python import PythonUtils
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class Function(TypedDict):
     repo: str

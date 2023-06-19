@@ -95,12 +95,12 @@ class GenerateDocumentation:
 		parser = Argparser().parser
 		args = parser.parse_args(namespace=Arguments)
 
+		self.api_key = os.getenv("OPENAI_GPT4_API_KEY")
+
 		if args.gpt_4:
-			self.api_key = os.getenv("OPENAI_GPT4_API_KEY")
 			self.MODEL = "gpt-4"
 			self.doc_col = 'AI documentation GPT4'
 		else:
-			self.api_key = os.getenv("OPENAI_API_KEY")
 			self.MODEL = "gpt-3.5-turbo-0613"
 			self.doc_col = 'AI documentation'
 		print("USING MODEL:", self.MODEL, ",Language:", args.language)
