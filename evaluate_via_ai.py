@@ -24,7 +24,7 @@ class EvaluateDocumentation:
 		{comment}
 		"""
 		try:
-			completion = openai.ChatCompletion.create(model="gpt-3.5-turbo",
+			completion = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613",
 				temperature=0,
 				messages=[
 				{"role": "user", "content": data_prompt},
